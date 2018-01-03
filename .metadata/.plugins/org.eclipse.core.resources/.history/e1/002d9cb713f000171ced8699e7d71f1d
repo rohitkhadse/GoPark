@@ -1,0 +1,32 @@
+package com.gopark.webservice.repository.impl;
+
+import com.gopark.webservice.entity.User;
+import com.gopark.webservice.repository.UserRepository;
+
+public class UserRepositoryImpl implements UserRepository{
+
+	@Override
+	public User findOne(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User create(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User update(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(User user) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

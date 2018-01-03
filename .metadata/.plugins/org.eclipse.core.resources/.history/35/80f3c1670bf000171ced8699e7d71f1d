@@ -1,0 +1,35 @@
+package com.gopark.webservice.service.impl;
+
+
+
+import com.gopark.webservice.entity.User;
+import com.gopark.webservice.service.UserService;
+
+public class UserServiceImpl implements UserService{
+
+	@Override
+	//@Transactional(readOnly = true)
+	public User findOne(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User create(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User update(String id, User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

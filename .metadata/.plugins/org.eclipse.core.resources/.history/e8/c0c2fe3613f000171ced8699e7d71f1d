@@ -1,0 +1,5 @@
+package com.gopark.webservice;
+
+public class WebConfig {
+
+}

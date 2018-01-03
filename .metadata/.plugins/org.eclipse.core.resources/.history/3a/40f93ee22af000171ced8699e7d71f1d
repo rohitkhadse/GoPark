@@ -1,0 +1,55 @@
+package com.gopark.webservice.service.impl;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.gopark.webservice.entity.User;
+import com.gopark.webservice.exception.BadRequestException;
+import com.gopark.webservice.exception.NotFoundException;
+import com.gopark.webservice.repository.UserRepository;
+import com.gopark.webservice.service.UserService;
+
+
+@Service
+public class UserServiceImpl implements UserService{
+
+
+	private UserRepository repository;
+	
+	public UserServiceImpl(UserRepository repository) {
+		this.repository = repository;
+	}
+	
+	@Override
+	@Transactional(readOnly = true)
+	public User findOne(String id) {
+		User existing  = repository.findOne(id);
+		if (existing == null) {
+			throw new NotFoundException("User with id "+ id + "does not exist");
+		}
+		return existing;
+	}
+
+	@Override
+	public User create(User user) {
+		User existing  = repository.findOne(user.getName());
+		
+		if (existing != null ) {
+			throw new BadRequestException("User with email "+ user.getName() + " already exists");
+		}
+		return repository.create(user);
+	}
+
+	@Override
+	public User update(String id, User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

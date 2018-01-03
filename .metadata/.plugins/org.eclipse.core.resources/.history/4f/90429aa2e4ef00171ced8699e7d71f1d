@@ -1,0 +1,5 @@
+package com.gopark.webservice.repository.impl;
+
+public class UserRepositoryImpl {
+
+}
